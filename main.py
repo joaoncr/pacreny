@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import pygame
 import sys
 import os
@@ -378,14 +376,16 @@ while running:
                         print("Fantasma comido!")
                     else:
                         lives -= 1
+                        # CORREÇÃO AQUI: ADICIONAR OFFSET_X E OFFSET_Y
                         player.rect.topleft = (
-                            PLAYER_START_POS[0] * TILE_SIZE + OFFSET_X + 2,
-                            PLAYER_START_POS[1] * TILE_SIZE + OFFSET_Y + 2 
+                            PLAYER_START_POS[0] * TILE_SIZE + OFFSET_X + 2, # Adiciona OFFSET_X
+                            PLAYER_START_POS[1] * TILE_SIZE + OFFSET_Y + 2  # Adiciona OFFSET_Y
                         )
                         player.stop_direction()
                         if lives <= 0:
                             current_game_state = GAME_STATE_GAME_OVER
                         break
+
         if len(hearts) == 0 or len(power_pellets) == 0:
             win_message = True
             current_game_state = GAME_STATE_WIN
