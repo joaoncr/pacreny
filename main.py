@@ -378,7 +378,10 @@ while running:
                         print("Fantasma comido!")
                     else:
                         lives -= 1
-                        player.rect.topleft = (PLAYER_START_POS[0] * TILE_SIZE + 2, PLAYER_START_POS[1] * TILE_SIZE + 2)
+                        player.rect.topleft = (
+                            PLAYER_START_POS[0] * TILE_SIZE + OFFSET_X + 2,
+                            PLAYER_START_POS[1] * TILE_SIZE + OFFSET_Y + 2 
+                        )
                         player.stop_direction()
                         if lives <= 0:
                             current_game_state = GAME_STATE_GAME_OVER
