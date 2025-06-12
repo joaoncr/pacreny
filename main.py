@@ -33,18 +33,18 @@ LABIRINTO_PACMAN_CLASSICO = [
 CURRENT_LABYRINTH = LABIRINTO_PACMAN_CLASSICO
 GRID_WIDTH = len(CURRENT_LABYRINTH[0])
 GRID_HEIGHT = len(CURRENT_LABYRINTH)
-WIDTH = GRID_WIDTH * TILE_SIZE + 500
-HEIGHT = (GRID_HEIGHT * TILE_SIZE) + 500
+WIDTH = GRID_WIDTH * TILE_SIZE + 400
+HEIGHT = (GRID_HEIGHT * TILE_SIZE) + 400
 
-OFFSET_X = 500 // 2
-OFFSET_Y = 500 // 2
+OFFSET_X = 400 // 2
+OFFSET_Y = 400 // 2
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Nosso Joguinho de Amor!")
 clock = pygame.time.Clock()
 
-FONT_DEFAULT = pygame.font.Font(None, 74)
-FONT_SMALL = pygame.font.Font(None, 48)
+FONT_DEFAULT = pygame.font.Font(None, 60)
+FONT_SMALL = pygame.font.Font(None, 30)
 
 def load_asset_image(path, scale_to_tile=True, custom_size=None):
     full_path = os.path.join('assets', path)
@@ -403,21 +403,21 @@ while running:
             center_y_start = HEIGHT // 2 - 80
 
             if current_game_state == GAME_STATE_WIN:
-                text = FONT_DEFAULT.render("Parabéns, meu amor!", True, PINK)
+                text = FONT_DEFAULT.render("Feliz dia dos namorados, meu amor!", True, PINK)
                 message = FONT_SMALL.render(
-                    "Você é o tesouro que eu sempre quis encontrar! Feliz Dia dos Namorados!",
+                    "Obrigado por tornar minha vida mais leve como esse joguinho!",
                     True, WHITE
                 )
                 message2 = FONT_SMALL.render(
-                    "Cada coração representa um momento nosso. Amo você! <3",
+                    "Te amo mais que tudo! <3",
                     True, WHITE
                 )
                 restart_message_text = "Pressione 'R' para jogar de novo."
 
             else:
-                text = FONT_DEFAULT.render("Ah não! Tente de novo, meu amor!", True, RED)
+                text = FONT_DEFAULT.render("Tente de novo, vida!", True, RED)
                 message = FONT_SMALL.render(
-                    "Os fantasmas do esquecimento não podem te pegar!",
+                    "Cuidado com os fantasmas!",
                     True, WHITE
                 )
                 message2 = FONT_SMALL.render(
